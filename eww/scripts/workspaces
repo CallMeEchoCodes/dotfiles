@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+# This script is designed to work with a single monitor setup.
+# It will work with multi monitor but it will only show the workspaces on the monitor you set.
+# I'm way too lazy to fix this but I might in the future.
+# If you want to fix it yourself, go ahead but please make a PR so i don't have to suffer.
+
+MONITOR="DP-1"
+
+INACTIVE_ICONS=("" "" "" "" "" "" "" "" "")
+ACTIVE_ICONS=("" "" "" "" "" "" "" "" "")
+WORKSPACES=(1 2 3 4 5 6 7 8 9)
+
+OUTPUT_TEMPLATE="(box :class \"workspaces\" :orientation \"h\" :spacing 5 :space-evenly \"true\" "
+
+render() {
+    OCCUPIED_WORKSPACES=("emptyWorkspace" "emptyWorkspace" "emptyWorkspace" "emptyWorkspace" "emptyWorkspace" "emptyWorkspace" "emptyWorkspace" "emptyWorkspace" "emptyWorkspace")
+
+    for OCCUPIED_WORKSPACE in $(hyprctl workspaces -j | jq ".[] | select(.monitor==\"$MONITOR\") | .id"); do
+        OCCUPIED_WORKSPACE_NUM=$OCCUPIED_WORKSPACE
+        OCCUPIED_WORKSPACES[OCCUPIED_WORKSPACE_NUM - 1]="occupiedWorkspace"
+    done
+
+    ACTIVE_WORKSPACE=$(hyprctl monitors -j | jq ".[] | select(.name==\"$MONITOR\") | .activeWorkspace | .id")
+    OUTPUT="$OUTPUT_TEMPLATE"
+
+    for WORKSPACE in "${WORKSPACES[@]}"; do
+        if [ "$WORKSPACE" == "$ACTIVE_WORKSPACE" ]; then
+            OUTPUT+="(button :onclick \"hyprctl dispatch workspace $WORKSPACE\" :class \"workspace ${OCCUPIED_WORKSPACES[WORKSPACE - 1]} activeWorkspace\" \"${ACTIVE_ICONS[WORKSPACE - 1]}\") "
+        else
+            OUTPUT+="(button :onclick \"hyprctl dispatch workspace $WORKSPACE\" :class \"workspace ${OCCUPIED_WORKSPACES[WORKSPACE - 1]}\" \"${INACTIVE_ICONS[WORKSPACE - 1]}\") "
+        fi
+    done
+
+    OUTPUT+=") "
+
+    echo -e "$OUTPUT"
+}
+
+render
+socat -u UNIX-CONNECT:/tmp/hypr/"$HYPRLAND_INSTANCE_SIGNATURE"/.socket2.sock - | while IFS=$'\n' read -r; do
+    render
+done

@@ -1,0 +1,56 @@
+{
+    "files": [
+        {
+            "name": "hyprland",
+            "location": "~/.config/hypr",
+            "type": "different"
+        },
+        {
+            "name": "eww",
+            "location": "~/.config",
+            "type": "same"
+        },
+        {
+            "name": "wezterm",
+            "location": "~/.config",
+            "type": "same"
+        },
+        {
+            "name": "fish",
+            "location": "~/.config",
+            "type": "same"
+        },
+        {
+            "name": "dunst",
+            "location": "~/.config",
+            "type": "same"
+        },
+        {
+            "name": "starship/starship.toml",
+            "location": "~/.config/starship.toml",
+            "type": "different"
+        },
+        {
+            "name": "rofi",
+            "location": "~/.config",
+            "type": "same"
+        },
+        {
+            "name": "fontconfig",
+            "location": "~/.config",
+            "type": "same"
+        },
+        {
+            "name": "swaylock",
+            "location": "~/.config",
+            "type": "same"
+        }
+    ],
+    "commands": [
+        {
+            "command": "fc-cache -f",
+            "message": "Updating fontconfig cache",
+            "donemessage": "Updated fontconfig cache"
+        }
+    ]
+}

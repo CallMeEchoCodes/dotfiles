@@ -1,0 +1,9 @@
+(defpoll memory :interval "5s" :initial "0" "printf \"%.0f\" $(free -m | grep Mem | awk '{print ($3/$2)*100}')")
+
+(defwidget memory []
+  (box :class "memory" :vexpand false :hexpand false
+    (circular-progress :value memory :class "memory-bar" :thickness 3
+      (label :class "memory-icon" :wrap false :tooltip "using ${memory}% ram" :text "")
+    )
+  )
+)

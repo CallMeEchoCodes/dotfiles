@@ -1,0 +1,64 @@
+(include "components/workspaces.yuck")
+(include "components/memory.yuck")
+
+(defwidget left []
+  (box
+    :orientation "h"
+    :halign "start"
+    :space-evenly false
+    (workspaces)
+  )
+)
+
+(defwidget middle []
+  (box
+    :orientation "h"
+    :halign "center"
+    :space-evenly false
+  )
+)
+(defwidget right []
+  (box
+    :orientation "h"
+    :halign "end"
+    :space-evenly false
+    (memory)
+  )
+)
+
+(defwidget bar []
+  (centerbox :orientation "h"
+    :class "bar"
+    (box
+      :class "left"
+      :valign "start"
+      (left)
+    )
+    (box
+      :class "middle"
+      :valign "center"
+      (middle)
+    )
+    (box
+      :class "right"
+      :valign "end"
+      (right)
+    )
+  )
+)
+
+
+(defwindow bar
+  :monitor "0"
+  :geometry (geometry
+    :x "0%"
+    :y "0%"
+    :width "98%"
+    :height "3%"
+    :anchor "top center"
+  )
+  :stacking "fg"
+  :windowtype "bar"
+  (bar)
+)
+

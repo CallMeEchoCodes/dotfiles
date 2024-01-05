@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+GDK_BACKEND=wayland eww open bar
