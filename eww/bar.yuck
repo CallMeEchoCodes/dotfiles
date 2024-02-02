@@ -22,6 +22,7 @@
     :orientation "h"
     :halign "end"
     :space-evenly false
+    (systray :pack-direction "ltr" :icon-size 24 :class "systray")
     (memory)
   )
 )
@@ -58,7 +59,7 @@
     :anchor "top center"
   )
   :stacking "fg"
-  :windowtype "bar"
+  :windowtype "dock"
   (bar)
 )
 

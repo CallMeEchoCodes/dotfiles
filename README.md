@@ -13,7 +13,7 @@
 | [dossier](https://github.com/CallMeEchoCodes/dossier)                  | A lightweight dotfile bootstrapper!                                                           | Installs dotfiles (and maybe more soon)|
 | [Hyprland](https://github.com/hyprwm/Hyprland)                         | A highly customizable dynamic tiling Wayland compositor that doesn't sacrifice on its looks.  | Window Manager/Compositor              |
 | [Inter Font](https://github.com/rsms/inter)                            | A typeface carefully crafted & designed for computer screens                                  | System Font                            |
-| [eww](https://github.com/elkowar/eww)                                  | A standalone widget system made in Rust that allows you to implement your own, custom widgets.| Top Bar                                |
+| [eww-tray](https://github.com/ralismark/eww/tree/tray-3)               | A standalone widget system that allows you to implement custom widgets (systray fork).        | Top Bar                                |
 | [socat](http://www.dest-unreach.org/socat)                             | Multipurpose relay (SOcket CAT)                                                               | Used in the EWW Workspaces script      |
 | [rofi](https://github.com/davatorium/rofi)                             | A window switcher, Application launcher and dmenu replacement.                                | App launcher                           |
 | [dunst](https://dunst-project.org)                                     | A lightweight replacement for the notification daemons provided by most desktop environments. | Notification Daemon                    |
@@ -26,7 +26,7 @@
 | Name                                                                   | Description                                                                                   | Where/why is it needed?                |
 | ---------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | -------------------------------------- |
 | [WezTerm](https://wezfurlong.org/wezterm/)                             | A powerful cross-platform terminal emulator and multiplexer                                   | Terminal Emulator                      |
-| [XDPH](https://github.com/hyprwm/xdg-desktop-portal-hyprland)          | A typeface carefully crafted & designed for computer screens                                  | Fixes screensharing                    |
+| [XDPH](https://github.com/hyprwm/xdg-desktop-portal-hyprland)          | An XDG Desktop Portal backend for Hyprland.                                                   | Fixes screensharing                    |
 | [fish](https://fishshell.com/)                                         | A smart and user-friendly command line shell for Linux, macOS, and the rest of the family.    | Shell                                  |
 | [fisher](https://github.com/jorgebucaran/fisher)                       | A plugin manager for Fish                                                                     | Fish plugins                           |
 | [Starship](https://starship.rs)                                        | The minimal, blazing-fast, and infinitely customizable prompt for any shell!                  | Shell prompt                           |
