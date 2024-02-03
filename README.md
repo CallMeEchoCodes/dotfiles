@@ -34,7 +34,12 @@
 | [grim](https://sr.ht/~emersion/grim/)                                  | Grab images from a Wayland compositor.                                                        | Screenshot script (2/3)                |
 | [hyprpicker](https://github.com/hyprwm/hyprpicker)                     | A wlroots-compatible Wayland color picker that does not suck.                                 | Colorpicker and Screenshot script (3/3)|
 | [swaylock](https://github.com/swaywm/swaylock)                         | A screen locking utility for Wayland compositors.                                             | Screen lock                            |
-| [swayidle](https://github.com/swaywm/swayidle)                         | Idle management daemon for Wayland                                                            | Auto screen lock                       |
+| [swayidle](https://github.com/swaywm/swayidle)                         | Idle management daemon for Wayland.                                                           | Auto screen lock                       |
+| [ncmpcpp](https://github.com/ncmpcpp/ncmpcpp)                          | A featureful ncurses based MPD client.                                                        | Music TUI                              |
+| [mopidy](https://mopidy.com/)                                          | An extensible music server written in Python.                                                 | Music Player                           |
+| [mopidy-local](https://mopidy.com/ext/local/)                          | Mopidy extension for playing music from your local music archive.                             | Music from local files                 |
+| [mopidy-spotify](https://mopidy.com/ext/spotify/)                      | Mopidy extension for playing music from the Spotify music streaming service.                  | Music from spotify                     |
+| [mopidy-mpris](https://mopidy.com/ext/mpris/)                          | Frontend for controlling Mopidy through the MPRIS D-Bus interface.                            | Music notification script              |
 
 ### Installation
 1. Install all required dependencies
@@ -56,6 +61,7 @@ I tried not to hardcode personal stuff but it was kinda required in places. I'll
 * `fontconfig/fonts.conf` contains fonts to change
 * `rofi/theme.rasi` contains another font to change
 * `wezterm/wezterm.lua` guess what? more fonts.
+* `ncmpcpp/music-notify.sh` music directory
 I think thats all of them but I might have missed some and I would recommend just going through everything to tweak it to your preferences. If you find any hardcoded stuff specific to my system make an issue.
 6. Run `dbus-run-session Hyprland` from a TTY to open Hyprland!
 

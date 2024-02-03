@@ -4,3 +4,6 @@ fish/functions
 fish/completions
 fish/conf.d
 fish/themes
+
+ncmpcpp/lyrics
+ncmpcpp/error.log
